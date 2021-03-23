@@ -10,11 +10,13 @@ public class Snake_and_Ladder_Simulator
 
 		//Variables
 		int position = 0; //Player position
+		int noOfDieRolls = 0;
 
 
 		//Start the game
 		while(position != WINNING_POSITION)
 		{
+			noOfDieRolls++; //To count no. of die rolled/played
 			//Generating options for game
 			int option = (int) (Math.random()*10%3);
 			//Rolling a Die
@@ -41,7 +43,8 @@ public class Snake_and_Ladder_Simulator
 				default: //NoPlay option
 					position += 0;
 			}
+			System.out.println("Player position: "+position);
 		}
-
+		System.out.println("Number of times die rolled: "+noOfDieRolls);
 	}
 }
