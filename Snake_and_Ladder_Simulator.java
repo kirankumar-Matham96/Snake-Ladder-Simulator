@@ -22,20 +22,10 @@ public class Snake_and_Ladder_Simulator
 			switch(option)
 			{
 				case LADDER:
-					if((position+dieRoll) <= WINNING_POSITION)
-					{
-						position += dieRoll;
-					}
+					position += dieRoll;
 					break;
 				case SNAKE:
-					if((position-dieRoll) >= 0)
-					{
-						position -= dieRoll;
-					}
-					else
-					{
-						position = 0;
-					}
+					position -= dieRoll;
 					break;
 				default: //NoPlay option
 					position += 0;
