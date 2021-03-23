@@ -5,7 +5,6 @@ public class Snake_and_Ladder_Simulator
 		//Constants
 		final int START_POSITION = 0;
 		final int WINNING_POSITION = 100;
-		final int NO_PLAY = 0;
 		final int LADDER = 1;
 		final int SNAKE = 2;
 
@@ -14,6 +13,8 @@ public class Snake_and_Ladder_Simulator
 
 
 		//Start the game
+		while(position != WINNING_POSITION)
+		{
 			//Generating options for game
 			int option = (int) (Math.random()*10%3);
 			//Rolling a Die
@@ -25,11 +26,19 @@ public class Snake_and_Ladder_Simulator
 					position += dieRoll;
 					break;
 				case SNAKE:
-					position -= dieRoll;
+					if((position-dieRoll) >= 0)
+					{
+						position -= dieRoll;
+					}
+					else
+					{
+						position = 0;
+					}
 					break;
 				default: //NoPlay option
 					position += 0;
 			}
+		}
 
 	}
 }
