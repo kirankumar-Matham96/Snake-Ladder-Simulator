@@ -5,8 +5,6 @@ public class Snake_and_Ladder_Simulator
 	static final int WINNING_POSITION = 100;
 	static final int LADDER = 1;
 	static final int SNAKE = 2;
-        static int player_1_position = START_POSITION;
-	static int player_2_position = START_POSITION;
 
 	public static int[] play(int position) //returns integer type array
 	{
@@ -47,6 +45,8 @@ public class Snake_and_Ladder_Simulator
 		//variables
 		int noOfDieRolls_1 = 0;
 		int noOfDieRolls_2 = 0;
+		int player_1_position = START_POSITION;
+		int player_2_position = START_POSITION;
 		int player_1_option = LADDER; //To play initially
 		int player_2_option = LADDER;
 		int[] player_1 = new int[2]; //Array to get player_1 details from 'play' method
