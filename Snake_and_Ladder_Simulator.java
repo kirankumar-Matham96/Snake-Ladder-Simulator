@@ -23,7 +23,10 @@ public class Snake_and_Ladder_Simulator
 			switch(option)
 			{
 				case LADDER:
-					position += dieRoll;
+					if((position+dieRoll) <= WINNING_POSITION)
+					{
+						position += dieRoll;
+					}
 					break;
 				case SNAKE:
 					if((position-dieRoll) >= 0)
