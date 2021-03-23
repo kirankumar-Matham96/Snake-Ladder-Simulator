@@ -14,11 +14,32 @@ public class Snake_and_Ladder_Simulator
 
 
 		//Start the game
-		//->Rolling a Die
-		int dieRoll = (int) (1+Math.random()*10%6);
-
-		//->Generating options for game
-		int option = (int) (Math.random()*10%3);
+			//Generating options for game
+			int option = (int) (Math.random()*10%3);
+			//Rolling a Die
+			int dieRoll = (int) (1+Math.random()*10%6);
+			//Checking Ladder or Snake
+			switch(option)
+			{
+				case LADDER:
+					if((position+dieRoll) <= WINNING_POSITION)
+					{
+						position += dieRoll;
+					}
+					break;
+				case SNAKE:
+					if((position-dieRoll) >= 0)
+					{
+						position -= dieRoll;
+					}
+					else
+					{
+						position = 0;
+					}
+					break;
+				default: //NoPlay option
+					position += 0;
+			}
 
 	}
 }
